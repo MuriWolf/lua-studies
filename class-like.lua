@@ -1,6 +1,5 @@
 Person = { immortal = true }
 
-
 function Person:new() 
   newPerson = { name = 'Murillo' }
   self.__index = self
@@ -19,3 +18,14 @@ person1 = Person:new()
 person1:greet()
 person1:isImmortal()
 
+
+-- inheritance
+
+Worker = Person:new()
+
+function Worker:greet()
+  print('Good morning boss, it\'s: ' .. self.name)
+end
+
+worker1 = Worker:new()
+worker1:greet()
